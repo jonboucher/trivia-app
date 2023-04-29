@@ -1,9 +1,11 @@
+import Welcome from './components/05_pages/Welcome';
+
 import classes from './App.module.scss';
 
 function App() {
   return (
     <main className={classes.app}>
-      <h1>JB Trivia</h1>
+      <Welcome />
     </main>
   );
 }

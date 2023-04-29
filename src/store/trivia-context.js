@@ -10,7 +10,7 @@ export const TriviaContextProvider = ({ children }) => {
   const [currentQuestion, setCurrentQuestion] = useState(null);
 
   useEffect(() => {
-    getQuestions();
+    //getQuestions();
   }, []);
 
   const getQuestions = () => {
