@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 const TriviaContext = React.createContext({
   questions: [],
   currentQuestion: null,
+  gameState: 'WELCOME',
 });
 
 export const TriviaContextProvider = ({ children }) => {
@@ -162,6 +163,7 @@ export const TriviaContextProvider = ({ children }) => {
   ];
   const [questions, setQuestions] = useState(DUMMY_DATA);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [gameState, setGameState] = useState('WELCOME');
 
   useEffect(() => {
     //getQuestions();
@@ -178,6 +180,7 @@ export const TriviaContextProvider = ({ children }) => {
       value={{
         questions: questions,
         currentQuestion: currentQuestion,
+        gameState: gameState,
       }}
     >
       {children}
