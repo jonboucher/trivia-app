@@ -6,6 +6,7 @@ const TriviaContext = React.createContext({
   gameState: 'WELCOME',
   isLoading: false,
   score: 0,
+  onResetGame: () => {},
 });
 
 export const TriviaContextProvider = ({ children }) => {
@@ -37,6 +38,13 @@ export const TriviaContextProvider = ({ children }) => {
     getQuestions(query);
   };
 
+  const resetGame = () => {
+    setScore(0);
+    setQuestions([]);
+    setCurrentQuestion(null);
+    setGameState('WELCOME');
+  };
+
   const handleScore = () => {
     setScore((prevScore) => {
       return prevScore + 1;
@@ -44,9 +52,13 @@ export const TriviaContextProvider = ({ children }) => {
   };
 
   const handleNextQuestion = () => {
-    setCurrentQuestion((prevQuestion) => {
-      return prevQuestion + 1;
-    });
+    if (currentQuestion === questions.length - 1) {
+      setGameState('END');
+    } else {
+      setCurrentQuestion((prevQuestion) => {
+        return prevQuestion + 1;
+      });
+    }
   };
 
   return (
@@ -55,7 +67,9 @@ export const TriviaContextProvider = ({ children }) => {
         questions: questions,
         currentQuestion: currentQuestion,
         gameState: gameState,
+        score: score,
         onStartGame: startGame,
+        onResetGame: resetGame,
         onNextQuestion: handleNextQuestion,
         onScore: handleScore,
       }}
