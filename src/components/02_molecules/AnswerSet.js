@@ -11,13 +11,13 @@ function AnswerSet() {
 
   const getAnswers = () => {
     const newAnswers = currentQuestion.incorrectAnswers.map((answer) => {
-      return <QuestionAnswer text={answer} key={answer} />;
+      return <QuestionAnswer text={answer} key={answer} isCorrect={false} />;
     });
     const place = Math.floor(Math.random() * (newAnswers.length + 1));
     newAnswers.splice(
       place,
       0,
-      <QuestionAnswer text={currentQuestion.correctAnswer} key={currentQuestion.correctAnswer} />
+      <QuestionAnswer text={currentQuestion.correctAnswer} key={currentQuestion.correctAnswer} isCorrect={true} />
     );
 
     return newAnswers;

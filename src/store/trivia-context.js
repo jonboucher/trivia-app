@@ -4,6 +4,8 @@ const TriviaContext = React.createContext({
   questions: [],
   currentQuestion: null,
   gameState: 'WELCOME',
+  isLoading: false,
+  score: 0,
 });
 
 export const TriviaContextProvider = ({ children }) => {
@@ -11,6 +13,7 @@ export const TriviaContextProvider = ({ children }) => {
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [gameState, setGameState] = useState('WELCOME');
+  const [score, setScore] = useState(0);
 
   const getQuestions = (params = 'https://the-trivia-api.com/v2/questions/') => {
     setIsLoading(true);
@@ -30,11 +33,20 @@ export const TriviaContextProvider = ({ children }) => {
   const startGame = (options) => {
     let numQuestions = 'limit=' + options.mode || '';
     let difficulty = 'difficulty=' + options.difficulty || '';
-
     let query = 'https://the-trivia-api.com/v2/questions?' + numQuestions + '&' + difficulty;
-    console.log(query);
-
     getQuestions(query);
+  };
+
+  const handleScore = () => {
+    setScore((prevScore) => {
+      return prevScore + 1;
+    });
+  };
+
+  const handleNextQuestion = () => {
+    setCurrentQuestion((prevQuestion) => {
+      return prevQuestion + 1;
+    });
   };
 
   return (
@@ -44,6 +56,8 @@ export const TriviaContextProvider = ({ children }) => {
         currentQuestion: currentQuestion,
         gameState: gameState,
         onStartGame: startGame,
+        onNextQuestion: handleNextQuestion,
+        onScore: handleScore,
       }}
     >
       {children}
