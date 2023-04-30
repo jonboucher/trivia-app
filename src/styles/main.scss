@@ -1,5 +1,15 @@
 @use './src/styles/abstracts' as abs;
 
 body {
-  font-size: 1.6em;
+  background: abs.$dark;
+  color: abs.$light;
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 5.6rem;
+}
+
+p {
+  font-size: 1.6rem;
 }

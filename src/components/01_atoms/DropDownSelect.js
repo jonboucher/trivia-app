@@ -1,3 +1,5 @@
+import classes from '../../styles/01_atoms/DropDownSelect.module.scss';
+
 function DropDownSelect({ options, id, onChange }) {
   const optionsAry = options.map((option) => {
     return (
@@ -8,7 +10,7 @@ function DropDownSelect({ options, id, onChange }) {
   });
 
   return (
-    <select id={id} onChange={onChange}>
+    <select className={`${classes['dds']}`} id={id} onChange={onChange}>
       {optionsAry}
     </select>
   );

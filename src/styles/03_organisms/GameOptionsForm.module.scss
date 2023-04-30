@@ -1,4 +1,18 @@
 .game-options-form {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
+
+  .btn-wrapper {
+    padding: 1.5rem 6rem;
+  }
+
+  .options {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    gap: 2.5rem;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    padding: 2rem 1.5rem;
+  }
 }

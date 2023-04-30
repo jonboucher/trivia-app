@@ -1,12 +1,16 @@
-import Button from '../01_atoms/Button';
 import GameOptionsForm from '../03_organisms/GameOptionsForm';
+
+import classes from '../../styles/05_pages/Welcome.module.scss';
 
 function Welcome() {
   return (
-    <section>
+    <section className={classes['welcome']}>
       <div className='inner'>
-        <h1>Welcome to JB Trivia</h1>
-        <p>Press play to start a new game, or select some custom options first</p>
+        <h1>TriviaBuzz</h1>
+        <p>
+          Start a new game, <br />
+          or select some custom options first.
+        </p>
         <GameOptionsForm />
       </div>
     </section>

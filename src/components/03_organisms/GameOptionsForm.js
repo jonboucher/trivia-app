@@ -38,19 +38,23 @@ function GameOptionsForm() {
 
   return (
     <form className={classes['game-options-form']}>
-      <Button text={'Play!'} onClick={handleStartGame} />
-      <DropDownSelectLabeled
-        label={'Mode'}
-        labelFor={'mode'}
-        selectOptions={MODE_OPTIONS}
-        onChange={(e) => handleChange(e, 'mode')}
-      />
-      <DropDownSelectLabeled
-        label={'Difficulty'}
-        labelFor={'difficulty'}
-        selectOptions={DIFFICULTY_OPTIONS}
-        onChange={(e) => handleChange(e, 'difficulty')}
-      />
+      <div className={classes['btn-wrapper']}>
+        <Button text={'Play!'} onClick={handleStartGame} />
+      </div>
+      <div className={classes['options']}>
+        <DropDownSelectLabeled
+          label={'Mode'}
+          labelFor={'mode'}
+          selectOptions={MODE_OPTIONS}
+          onChange={(e) => handleChange(e, 'mode')}
+        />
+        <DropDownSelectLabeled
+          label={'Difficulty'}
+          labelFor={'difficulty'}
+          selectOptions={DIFFICULTY_OPTIONS}
+          onChange={(e) => handleChange(e, 'difficulty')}
+        />
+      </div>
     </form>
   );
 }

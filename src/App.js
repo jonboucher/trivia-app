@@ -6,13 +6,13 @@ import GameEnd from './components/05_pages/GameEnd';
 
 import TriviaContext from './store/trivia-context';
 
-import classes from './App.module.scss';
+import classes from './App.scss';
 
 function App() {
   const ctx = useContext(TriviaContext);
 
   return (
-    <main className={classes.app}>
+    <main className='app'>
       {ctx.gameState === 'WELCOME' && <Welcome />}
       {ctx.gameState === 'PLAYING' && <QuestionTemplate />}
       {ctx.gameState === 'END' && <GameEnd />}
