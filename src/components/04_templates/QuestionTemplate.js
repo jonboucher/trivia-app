@@ -1,9 +1,16 @@
+import { useContext } from 'react';
+
 import Question from '../03_organisms/Question';
 
-function QuestionTemplate({ question, answer }) {
+import TriviaContext from '../../store/trivia-context';
+
+function QuestionTemplate() {
+  const ctx = useContext(TriviaContext);
+
   return (
     <div>
-      <Question />
+      {!ctx.isLoading && <Question />}
+      {ctx.isLoading && <p>Please wait...</p>}
     </div>
   );
 }

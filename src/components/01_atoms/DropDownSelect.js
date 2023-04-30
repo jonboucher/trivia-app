@@ -1,13 +1,17 @@
-function DropDownSelect({ options, id }) {
+function DropDownSelect({ options, id, onChange }) {
   const optionsAry = options.map((option) => {
     return (
-      <option value={option.value} key={option.value} id={id}>
+      <option value={option.value} key={option.value}>
         {option.text}
       </option>
     );
   });
 
-  return <select>{optionsAry}</select>;
+  return (
+    <select id={id} onChange={onChange}>
+      {optionsAry}
+    </select>
+  );
 }
 
 DropDownSelect.defaultProps = {

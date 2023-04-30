@@ -1,5 +1,5 @@
-function Button({ text }) {
-  return <button onClick={(e) => e.preventDefault()}>{text}</button>;
+function Button({ text, onClick }) {
+  return <button onClick={onClick}>{text}</button>;
 }
 
 Button.defaultProps = {
