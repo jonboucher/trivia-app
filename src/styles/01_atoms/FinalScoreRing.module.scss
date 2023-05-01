@@ -1,0 +1,56 @@
+@use '../abstracts/' as abs;
+
+.score-ring-wrapper {
+  margin-bottom: 2rem;
+
+  .score-wrapper {
+    position: relative;
+  }
+
+  svg {
+    width: 40rem;
+  }
+
+  .score-ring {
+    animation: score 3s normal forwards ease-in;
+    fill: transparent;
+    stroke: abs.$cta;
+    stroke-dasharray: 943;
+    stroke-dashoffset: 943;
+    stroke-linecap: butt;
+    stroke-width: 1.2rem;
+    transform: rotate((90deg));
+    transform-origin: center;
+
+    &--path {
+      fill: transparent;
+      stroke: darken(abs.$dark, 5%);
+      stroke-dasharray: 943;
+      stroke-linecap: butt;
+      stroke-width: 1.4rem;
+      transform: rotate((90deg));
+      transform-origin: center;
+    }
+
+    &--blocker {
+      fill: transparent;
+      stroke: darken(abs.$dark, 5%);
+      stroke-dasharray: 943;
+      stroke-dashoffset: 943;
+      stroke-linecap: square;
+      stroke-width: 1.4rem;
+      transform: rotate((90deg));
+      transform-origin: center;
+    }
+  }
+
+  @keyframes score {
+    0% {
+      stroke-dashoffset: 943;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+}

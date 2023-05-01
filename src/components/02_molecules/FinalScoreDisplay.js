@@ -4,7 +4,6 @@ import FinalScoreRing from '../01_atoms/FinalScoreRing';
 function FinalScoreDisplay() {
   return (
     <div>
-      <p>You Score is:</p>
       <FinalScoreRing>
         <FinalScore />
       </FinalScoreRing>
