@@ -3,6 +3,8 @@ import QuestionAnswer from '../01_atoms/QuestionAnswer';
 
 import TriviaContext from '../../store/trivia-context';
 
+import classes from '../../styles/02_molecules/AnswerSet.module.scss';
+
 function AnswerSet() {
   const [answers, setAnswers] = useState([]);
 
@@ -27,6 +29,6 @@ function AnswerSet() {
     setAnswers(getAnswers());
   }, [currentQuestion]);
 
-  return <div>{answers}</div>;
+  return <div className={classes['answer-set']}>{answers}</div>;
 }
 export default AnswerSet;

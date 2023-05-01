@@ -2,6 +2,8 @@ import { useContext } from 'react';
 
 import TriviaContext from '../../store/trivia-context';
 
+import classes from '../../styles/01_atoms/QuestionAnswer.module.scss';
+
 function QuestionAnswer({ text, isCorrect }) {
   const ctx = useContext(TriviaContext);
 
@@ -14,8 +16,8 @@ function QuestionAnswer({ text, isCorrect }) {
   };
 
   return (
-    <button onClick={handleClick}>
-      {text} {isCorrect}
+    <button className={classes['answer']} onClick={handleClick}>
+      {text}
     </button>
   );
 }
