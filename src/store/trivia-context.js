@@ -19,16 +19,22 @@ export const TriviaContextProvider = ({ children }) => {
   const getQuestions = (params = 'https://the-trivia-api.com/v2/questions/') => {
     setIsLoading(true);
 
-    fetch(params)
-      .then((response) => response.json())
-      .then((data) => {
-        setQuestions(data);
-      })
-      .finally(() => {
-        setIsLoading(false);
-        setCurrentQuestion(0);
-        setGameState('PLAYING');
-      });
+    try {
+      fetch(params)
+        .then((response) => response.json())
+        .then((data) => {
+          setQuestions(data);
+        })
+        .finally(() => {
+          setIsLoading(false);
+          setCurrentQuestion(0);
+          if (questions.length > 0) {
+            setGameState('PLAYING');
+          }
+        });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const startGame = (options) => {
