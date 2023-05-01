@@ -1,8 +1,15 @@
+@use '../abstracts/' as abs;
+
 .answer-set {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2.5rem;
-  grid-template-columns: calc(50% - 1.25rem) calc(50% - 1.25rem);
   margin-top: 2.5rem;
   padding: 3rem 1.5rem 2.5rem;
+
+  @include abs.media('mobile') {
+    display: grid;
+    grid-template-columns: calc(50% - 1.25rem) calc(50% - 1.25rem);
+  }
 }

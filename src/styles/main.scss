@@ -7,9 +7,17 @@ body {
 }
 
 h1 {
-  font-size: 5.6rem;
+  font-size: 4rem;
+
+  @include abs.media('mobile') {
+    font-size: 5.6rem;
+  }
 }
 
 p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+
+  @include abs.media('mobile') {
+    font-size: 1.6rem;
+  }
 }

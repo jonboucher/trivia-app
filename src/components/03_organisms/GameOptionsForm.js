@@ -39,7 +39,7 @@ function GameOptionsForm() {
   return (
     <form className={classes['game-options-form']}>
       <div className={classes['btn-wrapper']}>
-        <Button text={'Play!'} onClick={handleStartGame} />
+        <Button text={'Play!'} onClick={handleStartGame} wide={true} />
       </div>
       <div className={classes['options']}>
         <DropDownSelectLabeled

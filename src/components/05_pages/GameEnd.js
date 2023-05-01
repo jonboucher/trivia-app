@@ -17,7 +17,9 @@ function GameEnd() {
   return (
     <div className={classes['game-end']}>
       <FinalScoreDisplay />
-      <Button text={'Play Again'} onClick={handleReset} />
+      <div className={classes['button-wrapper']}>
+        <Button text={'Play Again'} onClick={handleReset} wide={true} />
+      </div>
     </div>
   );
 }

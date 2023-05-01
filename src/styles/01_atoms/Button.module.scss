@@ -5,10 +5,14 @@
   border: none;
   border-radius: 3rem;
   cursor: pointer;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
   padding: 1.4rem 2.5rem;
   transition: 250ms ease;
+
+  @include abs.media('mobile') {
+    font-size: 2.4rem;
+  }
 
   &:hover {
     background: darken(abs.$cta, 5%);
@@ -22,5 +26,9 @@
     &:hover {
       background: rgba(255, 255, 255, 0.1);
     }
+  }
+
+  &--wide {
+    width: 100%;
   }
 }

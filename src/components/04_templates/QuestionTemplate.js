@@ -11,8 +11,10 @@ function QuestionTemplate() {
 
   return (
     <div className={classes['question-template']}>
-      {!ctx.isLoading && <Question />}
-      {ctx.isLoading && <p>Please wait...</p>}
+      <div className='inner'>
+        {!ctx.isLoading && <Question />}
+        {ctx.isLoading && <p>Please wait...</p>}
+      </div>
     </div>
   );
 }
