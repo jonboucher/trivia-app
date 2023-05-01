@@ -28,9 +28,7 @@ export const TriviaContextProvider = ({ children }) => {
         .finally(() => {
           setIsLoading(false);
           setCurrentQuestion(0);
-          if (questions.length > 0) {
-            setGameState('PLAYING');
-          }
+          setGameState('PLAYING');
         });
     } catch (error) {
       console.error(error);

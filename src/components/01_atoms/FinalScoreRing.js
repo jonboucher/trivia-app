@@ -6,7 +6,7 @@ import TriviaContext from '../../store/trivia-context';
 function FinalScoreRing({ children }) {
   const ctx = useContext(TriviaContext);
 
-  const ringPercent = parseInt((ctx.score / ctx.questions.length) * 943) * -1;
+  const ringPercent = parseInt((ctx.score / ctx.questions.length) * 943);
 
   return (
     <div className={classes['score-ring-wrapper']}>
