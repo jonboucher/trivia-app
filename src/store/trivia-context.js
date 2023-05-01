@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const TriviaContext = React.createContext({
   questions: [],
@@ -68,6 +68,7 @@ export const TriviaContextProvider = ({ children }) => {
         currentQuestion: currentQuestion,
         gameState: gameState,
         score: score,
+        isLoading: isLoading,
         onStartGame: startGame,
         onResetGame: resetGame,
         onNextQuestion: handleNextQuestion,

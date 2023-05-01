@@ -6,7 +6,7 @@ import GameEnd from './components/05_pages/GameEnd';
 
 import TriviaContext from './store/trivia-context';
 
-import classes from './App.scss';
+import './App.scss';
 
 function App() {
   const ctx = useContext(TriviaContext);
