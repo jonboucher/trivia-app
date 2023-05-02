@@ -6,6 +6,7 @@
     content: '>';
     display: block;
     height: 5rem;
+    pointer-events: none;
     position: absolute;
     right: 0.7rem;
     top: calc(50% - 0.5rem);
