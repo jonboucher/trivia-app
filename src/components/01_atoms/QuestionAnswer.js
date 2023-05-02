@@ -13,6 +13,7 @@ function QuestionAnswer({ text, isCorrect }) {
       ctx.onScore();
     }
     ctx.onNextQuestion();
+    e.target.blur();
   };
 
   return (
