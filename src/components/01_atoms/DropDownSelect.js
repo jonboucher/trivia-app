@@ -10,9 +10,11 @@ function DropDownSelect({ options, id, onChange }) {
   });
 
   return (
-    <select className={`${classes['dds']}`} id={id} onChange={onChange}>
-      {optionsAry}
-    </select>
+    <div className={classes['dds-wrapper']}>
+      <select className={`${classes['dds']}`} id={id} onChange={onChange}>
+        {optionsAry}
+      </select>
+    </div>
   );
 }
 

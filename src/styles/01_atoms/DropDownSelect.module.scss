@@ -1,23 +1,41 @@
 @use '../abstracts/' as abs;
+.dds-wrapper {
+  position: relative;
 
-.dds {
-  background: transparent;
-  border: 1px solid abs.$light;
-  border-radius: 1rem;
-  color: abs.$light;
-  border: 1px solid;
-  cursor: pointer;
-  font-size: 1.6rem;
-  font-weight: 500;
-  padding: 1.2rem 1rem;
-  transition: 250ms ease;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.1);
+  &::before {
+    content: '>';
+    display: block;
+    height: 5rem;
+    position: absolute;
+    right: 0.7rem;
+    top: calc(50% - 0.5rem);
+    transform: rotate(90deg);
+    width: 5rem;
+    z-index: 100;
   }
 
-  option {
-    background-color: abs.$dark;
+  .dds {
+    appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: 1px solid abs.$light;
+    border-radius: 1rem;
     color: abs.$light;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1.2rem 1.4rem;
+    transition: 250ms ease;
+    width: 100%;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    option {
+      background-color: abs.$dark;
+      color: abs.$light;
+    }
   }
 }
